@@ -12005,6 +12005,14 @@ p {
   flex-direction: column;
 }
 
+.text-justify {
+  text-align: justify;
+}
+
+.arrondie {
+  border-radius: 20px;
+}
+
 footer.footer {
   padding: 15px;
   position: absolute;
