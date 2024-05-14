@@ -10,6 +10,39 @@ main{
     margin-bottom: 200px;
 }
 
+p{
+    font-family: $font-famil-serif;
+    font-size: 16px;
+}
+
+//je cale un élément de la même taille que mon image
+.hero-scene{
+    position: relative;
+    &::before{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url(../images/giraffe.jpg);
+    background-size: cover;
+    filter: brightness(0.3);
+    }
+
+    *{
+        //je position les élements devant mon before
+        position: relative;
+    }
+
+    .hero-scene-content{
+        height: 250px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+}
 footer.footer{
     padding: 15px;
     position: absolute;
