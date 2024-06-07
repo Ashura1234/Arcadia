@@ -13,6 +13,9 @@ export const allRoutes = [
     new Route("/reservationBalade", "reservaton balade", "/pages/reservations/reservationBalade.html"),
     new Route("/reserverBalade", "reservation d'une Balade", "/pages/reservations/reserverBalade.html"),
     new Route ("/ficheReservation", "fiche de reservation", "/pages/reservations/ficheReservation.html"),
+    new Route ("/signin", "Connexion", "/pages/auth/signin.html"),
+    new Route ("/signup", "Inscription", "/pages/auth/signup.html"), 
+    new Route ("/gestionService", "gestion des services", "/pages/admin/gestionService.html"),
 ];
 
 //Le titre s'affiche comme ceci : Route.titre - websitename
