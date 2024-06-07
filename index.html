@@ -27,7 +27,7 @@
                 <a class="nav-link text-white" href="/services">Service</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white" href="#">mes réservations</a>
+                <a class="nav-link text-white" href="/ficheReservation">mes réservations</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link text-white" href="#">Nous contacter</a>
@@ -40,31 +40,40 @@
         </div>
       </nav>
     </header>
-    <main id="main-page">
-        
-
+    <main id="main-page">     
     </main>
 
-    <footer class="bg-primary text-white text-center footer">
-        <div class="row">
-            <div class="col-12">
-                <h3>Nos Horraires</h3>
-            </div>
-            <div class="col-6">
-                <p> Du lundi au vendredi</p>
-            </div>
-            <div class="col-6">
-                <p>10h00-18h00</p>
-            </div>
-            <div class="col-6">
-                <p>Arcadia 13 rue de la Ville <br/>
-                    +010203040506</p>
-            </div>
-            <div class="col-6">
-                <p>Arcadia@gmail.com</p>
-            </div>
-        </div>
-    </footer>
+    <footer class="bg-primary text-white text-center pt-4">
+      <div class="container">
+          <div class="row justify-content-center">
+              <div class="col-12 col-md-6 ">
+                  <form>
+                      <div class="form-group" style="border-width: 50px">
+                          <label for="CommentaireInput" class="form-label"></label>
+                          <input type="text" class="form-control" id="CommentaireInput" placeholder="laissez un commentaire...">
+                      </div>
+                  </form>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-12">
+                  <h3>Nos Horraires</h3>
+              </div>
+              <div class="col-6">
+                  <p>Du lundi au vendredi</p>
+              </div>
+              <div class="col-6">
+                  <p>10h00-18h00</p>
+              </div>
+              <div class="col-6">
+                  <p>Arcadia 13 rue de la Ville <br/>+010203040506</p>
+              </div>
+              <div class="col-6">
+                  <p>Arcadia@gmail.com</p>
+              </div>
+          </div>
+      </div>
+  </footer>
 
     <script type="module" src="Router/router.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
