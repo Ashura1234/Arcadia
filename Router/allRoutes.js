@@ -9,13 +9,15 @@ export const allRoutes = [
     new Route("/detailZebre", "Habitat du Zebre", "/pages/animaux/detailZebre.html"),
     new Route("/detailGirafe", "Habitat de la Girafe", "/pages/animaux/detailGirafe.html"),
     new Route("/detailKoala", "Habitat du Koala ", "/pages/animaux/detailKoala.html"),
-    new Route("/reservation", "reserver", "/pages/reservations/reservation.html"),
-    new Route("/reservationBalade", "reservaton balade", "/pages/reservations/reservationBalade.html"),
+    new Route("/reservationRestauration", "détails de la Restauration", "/pages/reservations/reservation.html"),
+    new Route("/reservationBalade", "détails des balades", "/pages/reservations/reservationBalade.html"),
     new Route("/reserverBalade", "reservation d'une Balade", "/pages/reservations/reserverBalade.html"),
     new Route ("/ficheReservation", "fiche de reservation", "/pages/reservations/ficheReservation.html"),
     new Route ("/signin", "Connexion", "/pages/auth/signin.html"),
     new Route ("/signup", "Inscription", "/pages/auth/signup.html"), 
     new Route ("/gestionService", "gestion des services", "/pages/admin/gestionService.html"),
+    new Route("/reserverRestauration", "réserver une table", "/pages/reservations/reserverRestauration.html"),
+    new Route("/reserverVisite", "réserver une visite guidée", "/pages/reservations/reserverVisite.html"),
 ];
 
 //Le titre s'affiche comme ceci : Route.titre - websitename
