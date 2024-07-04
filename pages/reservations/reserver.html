@@ -6,6 +6,15 @@
 
 <div class="container pt-4">
     <form>
+      <div class="mb-3">
+        <label for="ServiceSelect" class="form-label">Type de Service</label>
+        <select class="form-control" id="ServiceSelect">
+            <option value="">Sélectionnez un service</option>
+            <option value="restauration">Restauration</option>
+            <option value="balades_petit_train">Balades en Petit Train</option>
+            <option value="visites_guidées">Visites Guidées</option>
+        </select>
+    </div>
         <div class="mb-3">
             <label for="NomInput" class="form-label">Nom</label>
             <input type="text" class="form-control" id="NomInput" placeholder="Votre Nom">
@@ -24,6 +33,6 @@
           </div>
 </div>
 <div class="text-center">
-  <a href="/reservationBalade" class="btn btn-danger"> Annuler</a>
+  <a href="/services" class="btn btn-danger"> Annuler</a>
   <a href="/ficheReservation" class="btn btn-primary" type="submit"> Valider ma réservation</a>
 </div>
