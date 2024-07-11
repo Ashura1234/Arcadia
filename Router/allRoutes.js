@@ -14,7 +14,7 @@ export const allRoutes = [
     new Route("/reserverBalade", "reservation d'une Balade", "/pages/reservations/reserverBalade.html"),
     new Route ("/ficheReservation", "fiche de reservation", "/pages/reservations/ficheReservation.html"),
     new Route ("/signin", "Connexion", "/pages/auth/signin.html"),
-    new Route ("/signup", "Inscription", "/pages/auth/signup.html"), 
+    new Route ("/signup", "Inscription", "/pages/auth/signup.html", "/js/auth/signup.js"), 
     new Route ("/gestionService", "gestion des services", "/pages/admin/gestionService.html"),
     new Route("/reserver", "réserver une table", "/pages/reservations/reserver.html"),
 ];
