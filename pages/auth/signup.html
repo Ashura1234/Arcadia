@@ -10,20 +10,32 @@
           <label for="prenomInput" class="form-label">Prénom</label>
           <input type="text" class="form-control" id="prenomInput" aria-describedby="prenomInput">
           <div id="prenomInput" class="form-text"></div>
+          <div class="invalid-feedback">
+            Ce champ est obligatoire 
+        </div>
         </div>
         <div class="mb-3">
             <label for="nomInput" class="form-label">Nom</label>
             <input type="text" class="form-control" id="nomInput" aria-describedby="nomInput">
             <div id="nomInput" class="form-text"></div>
+            <div class="invalid-feedback">
+              Ce champ est obligatoire 
+          </div>
           </div>
           <div class="mb-3">
             <label for="mailInput" class="form-label">Mail</label>
             <input type="email" class="form-control" id="mailInput" aria-describedby="emailHelp">
             <div id="emailHelp" class="form-text"></div>
+            <div class="invalid-feedback">
+              Mail invalide 
+          </div>
           </div>
         <div class="mb-3">
           <label for="mdpInput" class="form-label">Mot de passe</label>
           <input type="password" class="form-control" id="mdpInput">
+          <div class="invalid-feedback">
+              Le mot de passe doit contenir au moins 8 charactère dont une lettre MAJUSCULE, une lettre minuscule, un chiffre et un charactère spécial
+          </div>
         </div>
         <div class="mb-3">
             <label for="mdpValideInput" class="form-label">Confirmation de mot de passe</label>

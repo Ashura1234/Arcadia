@@ -17,12 +17,29 @@ function validateForm(){
     const prenomOk = ValidateRequired(inputPrenom);
     const nomOk = ValidateRequired(inputNom);
     const mailOk = mailValid(inputMail);
+    const mdpOk = mdpValid(inputMdp);
 
-    if(prenomOk && nomOk && mailOk) {
+    if(prenomOk && nomOk && mailOk && mdpOk) {
         btnInscription.disabled = false;
     } 
     else{
         btnInscription.disabled = true;
+    }
+}
+
+function mdpValid(input){
+    //définir une expression régulière --> regex
+    const mdpRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_])[A-Za-z\d\W_]{8,}$/;
+    const userMdp = input.value;
+    if(userMdp.match(mdpRegex)) {
+        input.classList.add("is-valid");
+        input.classList.remove("is-invalid");
+        return true;
+    } 
+    else{
+        input.classList.remove("is-valid");
+        input.classList.add("is-invalid");
+        return false;
     }
 }
 
