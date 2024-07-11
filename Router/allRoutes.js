@@ -13,7 +13,7 @@ export const allRoutes = [
     new Route("/reservationBalade", "détails des balades", "/pages/services/balade.html"),
     new Route("/reserverBalade", "reservation d'une Balade", "/pages/reservations/reserverBalade.html"),
     new Route ("/ficheReservation", "fiche de reservation", "/pages/reservations/ficheReservation.html"),
-    new Route ("/signin", "Connexion", "/pages/auth/signin.html"),
+    new Route ("/signin", "Connexion", "/pages/auth/signin.html", "/js/auth/signin.js"),,
     new Route ("/signup", "Inscription", "/pages/auth/signup.html", "/js/auth/signup.js"), 
     new Route ("/gestionService", "gestion des services", "/pages/admin/gestionService.html"),
     new Route("/reserver", "réserver une table", "/pages/reservations/reserver.html"),
