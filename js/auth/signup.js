@@ -18,12 +18,25 @@ function validateForm(){
     const nomOk = ValidateRequired(inputNom);
     const mailOk = mailValid(inputMail);
     const mdpOk = mdpValid(inputMdp);
+    const mdpValide = mdpvalided(inputMdp, inputValideMdp);
 
-    if(prenomOk && nomOk && mailOk && mdpOk) {
+    if(prenomOk && nomOk && mailOk && mdpOk && mdpValide) {
         btnInscription.disabled = false;
     } 
     else{
         btnInscription.disabled = true;
+    }
+}
+
+function mdpvalided(inputMdp, inputValideMdp){
+    if(inputMdp.value == inputValideMdp.value){
+        inputValideMdp.classList.add("is-valid");
+        inputValideMdp.classList.remove("is-invalid");
+        return true;
+    }else{
+        inputValideMdp.classList.add("is-invalid");
+        inputValideMdp.classList.remove("is-valid");
+        return false;
     }
 }
 
