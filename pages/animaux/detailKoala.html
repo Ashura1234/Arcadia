@@ -48,8 +48,44 @@
                     </div>
                     </div>
                     <div class="text-center p-4">
-                        <button class="btn btn-dark" data-show="connected">modifier</button>
+                        <button type="button" class="btn btn-dark" data-show="connected" data-bs-toggle="modal" data-bs-target="#editionHabitatModal">modifier</button>
                     </div>
                 </div>
             </div>
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="editionHabitatModal" tabindex="-1" aria-labelledby="editionHabitatModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editionHabitatModalLabel">Edition de la description de l'animal</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form>
+                <div class="mb-3">
+                  <label for="PictureInput" class="form-label">Modifier les photos </label>
+                  <input type="file" class="form-control" id="PictureInput" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <label for="DescriptionInput" class="form-label">Modifier la description de l'habitat </label>
+                    <input type="text" class="form-control" id="DescriptionInput">
+                  </div>
+                <div class="mb-3">
+                  <label for="DescriptionInput" class="form-label">Modifier la description de l'animal</label>
+                  <input type="text" class="form-control" id="DescriptionInput">
+                </div>
+                <div class="mb-3">
+                    <label for="DescriptionInput" class="form-label">Compte rendu du vétérinaire</label>
+                    <input type="text" class="form-control" id="DescriptionInput">
+                  </div>
+                <button type="button" class="btn btn-secondary" id="btn-connexion" data-bs-dismiss="modal"> Annuler </button>
+                <button type="button" class="btn btn-primary" id="btn-connexion"> Enregistrer les modifications </button>
+              </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
