@@ -1,4 +1,12 @@
 const tokenCookieName = "accesToken";
+const btnDeconnexion = document.getElementById("btn-deconnexion");
+
+btnDeconnexion.addEventListener("click", deconnected);
+
+function deconnected(){
+    eraseCookie(tokenCookieName);
+    window.location.reload();
+}
 
 function setToken(token){
     setCookie(tokenCookieName, token, 7);
