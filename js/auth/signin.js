@@ -11,6 +11,7 @@ function checkAuth(){
         const token = "eijiojoijrijihjroijhirjhoirjhoirjhiorjhoirjhtijrtoiorijtei";
         setToken(token);
 
+        setCookie(roleCookieName, "admin", 7);
         window.location.replace("/")
     }else{
         mailInput.classList.add("is-invalid");

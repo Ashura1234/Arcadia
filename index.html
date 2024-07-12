@@ -32,7 +32,7 @@
               <li class="nav-item">
                 <a class="nav-link text-white" href="#">Nous contacter</a>
               </li>
-              <li class="nav-item dropdown">
+              <li class="nav-item dropdown" data-show="connected">
                 <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Tableau de bord
                 </a>
@@ -42,11 +42,11 @@
                   <li><a class="dropdown-item text-white bg-black" href="#">Compte rendu du vétérinaire</a></li>
                 </ul>
               </li>
-              <li class="nav-item">
+              <li class="nav-item" data-show="disconnected">
                 <a class="nav-link text-white" href="/signin">Connexion</a>
               </li>
               <li class="nav-item">
-                <button class="nav-link text-white" id="btn-deconnexion">Déconnexion</a>
+                <button class="nav-link text-white" id="btn-deconnexion" data-show="connected">Déconnexion</a>
               </li>
             </ul>
           </div>
