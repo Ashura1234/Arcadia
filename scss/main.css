@@ -37,7 +37,7 @@
   --bs-warning: #ffc107;
   --bs-danger: #dc3545;
   --bs-light: #f8f9fa;
-  --bs-dark: #3D2B1F;
+  --bs-dark: #FFDD57;
   --bs-primary-rgb: 85, 107, 47;
   --bs-secondary-rgb: 176, 196, 222;
   --bs-success-rgb: 25, 135, 84;
@@ -45,7 +45,7 @@
   --bs-warning-rgb: 255, 193, 7;
   --bs-danger-rgb: 220, 53, 69;
   --bs-light-rgb: 248, 249, 250;
-  --bs-dark-rgb: 61, 43, 31;
+  --bs-dark-rgb: 255, 221, 87;
   --bs-primary-text-emphasis: #222b13;
   --bs-secondary-text-emphasis: #464e59;
   --bs-success-text-emphasis: #0a3622;
@@ -2030,15 +2030,15 @@ progress {
 }
 
 .table-dark {
-  --bs-table-color: #fff;
-  --bs-table-bg: #3D2B1F;
-  --bs-table-border-color: #64554c;
-  --bs-table-striped-bg: #47362a;
-  --bs-table-striped-color: #fff;
-  --bs-table-active-bg: #504035;
-  --bs-table-active-color: #fff;
-  --bs-table-hover-bg: #4c3b30;
-  --bs-table-hover-color: #fff;
+  --bs-table-color: #1C1C1C;
+  --bs-table-bg: #FFDD57;
+  --bs-table-border-color: #d2b64b;
+  --bs-table-striped-bg: #f4d354;
+  --bs-table-striped-color: #1C1C1C;
+  --bs-table-active-bg: #e8ca51;
+  --bs-table-active-color: #1C1C1C;
+  --bs-table-hover-bg: #eecf53;
+  --bs-table-hover-color: #1C1C1C;
   color: var(--bs-table-color);
   border-color: var(--bs-table-border-color);
 }
@@ -3130,20 +3130,20 @@ textarea.form-control-lg {
 }
 
 .btn-dark {
-  --bs-btn-color: #fff;
-  --bs-btn-bg: #3D2B1F;
-  --bs-btn-border-color: #3D2B1F;
-  --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #5a4b41;
-  --bs-btn-hover-border-color: #504035;
-  --bs-btn-focus-shadow-rgb: 90, 75, 65;
-  --bs-btn-active-color: #fff;
-  --bs-btn-active-bg: #64554c;
-  --bs-btn-active-border-color: #504035;
+  --bs-btn-color: #1C1C1C;
+  --bs-btn-bg: #FFDD57;
+  --bs-btn-border-color: #FFDD57;
+  --bs-btn-hover-color: #1C1C1C;
+  --bs-btn-hover-bg: #ffe270;
+  --bs-btn-hover-border-color: #ffe068;
+  --bs-btn-focus-shadow-rgb: 221, 192, 78;
+  --bs-btn-active-color: #1C1C1C;
+  --bs-btn-active-bg: #ffe479;
+  --bs-btn-active-border-color: #ffe068;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(28, 28, 28, 0.125);
-  --bs-btn-disabled-color: #fff;
-  --bs-btn-disabled-bg: #3D2B1F;
-  --bs-btn-disabled-border-color: #3D2B1F;
+  --bs-btn-disabled-color: #1C1C1C;
+  --bs-btn-disabled-bg: #FFDD57;
+  --bs-btn-disabled-border-color: #FFDD57;
 }
 
 .btn-outline-primary {
@@ -3266,19 +3266,19 @@ textarea.form-control-lg {
 }
 
 .btn-outline-dark {
-  --bs-btn-color: #3D2B1F;
-  --bs-btn-border-color: #3D2B1F;
-  --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #3D2B1F;
-  --bs-btn-hover-border-color: #3D2B1F;
-  --bs-btn-focus-shadow-rgb: 61, 43, 31;
-  --bs-btn-active-color: #fff;
-  --bs-btn-active-bg: #3D2B1F;
-  --bs-btn-active-border-color: #3D2B1F;
+  --bs-btn-color: #FFDD57;
+  --bs-btn-border-color: #FFDD57;
+  --bs-btn-hover-color: #1C1C1C;
+  --bs-btn-hover-bg: #FFDD57;
+  --bs-btn-hover-border-color: #FFDD57;
+  --bs-btn-focus-shadow-rgb: 255, 221, 87;
+  --bs-btn-active-color: #1C1C1C;
+  --bs-btn-active-bg: #FFDD57;
+  --bs-btn-active-border-color: #FFDD57;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(28, 28, 28, 0.125);
-  --bs-btn-disabled-color: #3D2B1F;
+  --bs-btn-disabled-color: #FFDD57;
   --bs-btn-disabled-bg: transparent;
-  --bs-btn-disabled-border-color: #3D2B1F;
+  --bs-btn-disabled-border-color: #FFDD57;
   --bs-gradient: none;
 }
 
@@ -6832,7 +6832,7 @@ textarea.form-control-lg {
 }
 
 .text-bg-dark {
-  color: #fff !important;
+  color: #1C1C1C !important;
   background-color: RGBA(var(--bs-dark-rgb), var(--bs-bg-opacity, 1)) !important;
 }
 
@@ -6904,8 +6904,8 @@ textarea.form-control-lg {
   text-decoration-color: RGBA(var(--bs-dark-rgb), var(--bs-link-underline-opacity, 1)) !important;
 }
 .link-dark:hover, .link-dark:focus {
-  color: RGBA(49, 34, 25, var(--bs-link-opacity, 1)) !important;
-  text-decoration-color: RGBA(49, 34, 25, var(--bs-link-underline-opacity, 1)) !important;
+  color: RGBA(255, 228, 121, var(--bs-link-opacity, 1)) !important;
+  text-decoration-color: RGBA(255, 228, 121, var(--bs-link-underline-opacity, 1)) !important;
 }
 
 .link-body-emphasis {
@@ -11971,8 +11971,8 @@ html {
   min-height: 100%;
 }
 
-main {
-  margin-bottom: 200px;
+.main-page {
+  margin-bottom: 250px;
 }
 
 p {
@@ -12013,15 +12013,19 @@ p {
   border-radius: 20px;
 }
 
-.form-group {
-  border: 40px;
-  padding-bottom: 15px;
-  border-color: gold;
-}
-
 footer.footer {
   padding: 15px;
   position: absolute;
   bottom: 0;
   width: 100%;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.image {
+  height: 300px;
+  width: 200px;
 }/*# sourceMappingURL=main.css.map */
