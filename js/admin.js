@@ -34,6 +34,7 @@ function showAllUser() {
     users.forEach(function (user) {
         const newDiv = document.createElement('div');
         newDiv.setAttribute('id', `user${user.id}`);
+        newDiv.classList.add('mb-4', 'p-3', 'border', 'rounded');
 
         const emailInput = document.createElement('input');
         emailInput.setAttribute('type', 'text');
