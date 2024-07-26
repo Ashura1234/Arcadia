@@ -15,8 +15,8 @@ export const allRoutes = [
     new Route ("/ficheReservation", "fiche de reservation", "/pages/reservations/ficheReservation.html", ["client"]),
     new Route ("/signin", "Connexion", "/pages/auth/signin.html", ["disconnected"], "/js/auth/signin.js"),,
     new Route ("/signup", "Inscription", "/pages/auth/signup.html", ["disconnected"], "/js/auth/signup.js"), 
-    new Route ("/gestionService", "gestion des services", ["admin"], "/pages/admin/gestionService.html"),
-    new Route("/reserver", "réserver une table", "/pages/reservations/reserver.html", []),
+    new Route ("/gestionUser", "gestion des services", "/pages/admin/gestionUser.html", ["admin"], "js/admin.js"),
+    new Route("/reserver", "réserver une table", "/pages/reservations/reserver.html", ["client"]),
 ];
 
 //Le titre s'affiche comme ceci : Route.titre - websitename

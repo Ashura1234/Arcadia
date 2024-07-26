@@ -36,9 +36,10 @@
                 <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Tableau de bord
                 </a>
-                <ul class="dropdown-menu bg-white" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item text-white bg-white" href="#" data-show="admin">Compte utilisateurs</a></li>
-                  <li><a class="dropdown-item text-white bg-white" href="/habitat" data-show="veterinaire">faire mon compte rendu </a></li>
+                <ul class="dropdown-menu bg-black" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item text-white bg-black" href="/gestionUser" data-show="admin">Compte utilisateurs</a></li>
+                  <li><a class="dropdown-item text-white bg-black" href="#" data-show="admin">Commentaire</a></li>
+                  <li><a class="dropdown-item text-white bg-black" href="/habitat" data-show="veterinaire">faire mon compte rendu </a></li>
                 </ul>
               </li>
               <li class="nav-item" data-show="disconnected">
@@ -75,7 +76,7 @@
               <p>Arcadia@gmail.com</p>
           </div>
           <div class="col-md-">
-          <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#commentaireModal">Laisser un commentaire</button>
+          <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#commentaireModal" data-show="employe">Laisser un commentaire</button>
       </div>
     </div>
   </div>
@@ -99,8 +100,8 @@
                 <label for="DescriptionInput" class="form-label"> Laissez un commentaire sur votre expérience au sein du zoo Arcadia </label>
                 <input type="text" class="form-control" id="DescriptionInput">
               </div>
-              <button type="button" class="btn btn-secondary" id="btn-connexion" data-bs-dismiss="modal"> Annuler </button>
-              <button type="button" class="btn btn-dark" id="btn-connexion"> commenter </button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"> Annuler </button>
+              <button type="button" class="btn btn-dark"> commenter </button>
             </form>
       </div>
     </div>
