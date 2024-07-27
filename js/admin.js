@@ -1,8 +1,12 @@
 const btnCreation = document.getElementById("btn-creation");
-const users = [{id: 1, email: 'jean@gmail.com', mdp: '1234', role: 'employe'}]
+const users = [{id: 1, prenom: 'jean', nom: 'mph', email: 'jean@gmail.com', mdp: '1234', role: 'employe'}]
 const InputMdpCreation = document.getElementById("mdpCreateInput");
 const InputMailCreation = document.getElementById("mailCreateInput");
 const InputRoleCreation = document.getElementById("roleCreateInput");
+const InputPrenomCreation = document.getElementById("prenomCreateInput");
+const InputNomCreation = document.getElementById("nomCreateInput");
+InputPrenomCreation.addEventListener("keyup", validateForm);
+InputNomCreation.addEventListener("keyup", validateForm);
 InputMailCreation.addEventListener("keyup", validateForm);
 InputMdpCreation.addEventListener("keyup", validateForm);
 InputRoleCreation.addEventListener("keyup", validateForm);
@@ -12,19 +16,22 @@ btnCreation.addEventListener('click', createUser);
 //fonctionalité
 function createUser(event) {
     event.preventDefault();
-
+    const prenomOk = ValidateRequired(InputPrenomCreation);
+    const nomOk = ValidateRequired(InputNomCreation);
     const mailValideOk = mailValid(InputMailCreation);
     const mdpValideOk = mdpValid(InputMdpCreation);
     const roleValideOk = ValidateRequired(InputRoleCreation);
 
     const userData = {
         id: users.length !== 0 ? users[users.length - 1].id + 1 : 1,
+        prenom: InputPrenomCreation.value,
+        nom: InputNomCreation.value,
         email: InputMailCreation.value,
         mdp: InputMdpCreation.value,
         role: InputRoleCreation.value
     };
 
-    if (mailValideOk && mdpValideOk && roleValideOk) {
+    if (prenomOk && nomOk && mailValideOk && mdpValideOk && roleValideOk) {
         if (isEmailUnique(userData.email)) {
             btnCreation.disabled = false;
             users.push(userData);
@@ -51,6 +58,18 @@ function showAllUser() {
         newDiv.setAttribute('id', `user${user.id}`);
         newDiv.classList.add('mb-4', 'p-3', 'border', 'rounded');
 
+        const prenomInput = document.createElement('input');
+        prenomInput.setAttribute('type', 'text');
+        prenomInput.setAttribute('id', `prenomOfUser${user.id}`);
+        prenomInput.setAttribute('value', user.prenom);
+        prenomInput.classList.add('form-control', 'mb-2');
+
+        const nomInput = document.createElement('input');
+        nomInput.setAttribute('type', 'text');
+        nomInput.setAttribute('id', `nomOfUser${user.id}`);
+        nomInput.setAttribute('value', user.nom);
+        nomInput.classList.add('form-control', 'mb-2');
+
         const emailInput = document.createElement('input');
         emailInput.setAttribute('type', 'text');
         emailInput.setAttribute('id', `emailOfUser${user.id}`);
@@ -69,6 +88,8 @@ function showAllUser() {
         roleInput.setAttribute('value', user.role);
         roleInput.classList.add('form-control', 'mb-2');
 
+        newDiv.appendChild(prenomInput);
+        newDiv.appendChild(nomInput);
         newDiv.appendChild(emailInput);
         newDiv.appendChild(passwordInput);
         newDiv.appendChild(roleInput);
@@ -98,9 +119,13 @@ function showAllUser() {
 function editUser(userId) {
     const user = users.find(user => user.id === userId);
     if (user) {
+        const prenomInput = document.getElementById(`prenomOfUser${userId}`);
+        const nomInput = document.getElementById(`nomOfUser${userId}`);
         const emailInput = document.getElementById(`emailOfUser${userId}`);
         const passwordInput = document.getElementById(`passwordOfUser${userId}`);
         const roleInput = document.getElementById(`roleOfUser${userId}`);
+        user.prenom = prenomInput.value;
+        user.nom = nomInput.value;
         user.email = emailInput.value;
         user.mdp = passwordInput.value;
         user.role = roleInput.value;
@@ -110,11 +135,13 @@ function editUser(userId) {
 
 
 function validateForm(){
+    const prenomOk = ValidateRequired(InputPrenomCreation);
+    const nomOk = ValidateRequired(InputNomCreation);
     const mailOk = mailValid(InputMailCreation);
     const mdpOk = mdpValid(InputMdpCreation);
     const roleOk = ValidateRequired(InputRoleCreation);
 
-    if( mailOk && mdpOk && roleOk) {
+    if(prenomOk && nomOk && mailOk && mdpOk && roleOk) {
         btnCreation.disabled = false;
     } 
     else{

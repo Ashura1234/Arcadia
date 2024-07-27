@@ -9,6 +9,20 @@
    <div class="containe p-4">
     <h2 class="text-primary text-center"> <u>Ajouter un nouvel utilisateur </u></h2>
    <form class="row p-4 bg-black arrondie text-white">
+    <div class="mb-3">
+        <label for="prenomCreateInput" class="form-label">Prénom de l'utilisateur</label>
+        <input type="text" class="form-control" id="prenomCreateInput" aria-describedby="prenomCreateInput">
+        <div id="prenomCreateInput" class="form-text"></div>
+        <div class="invalid-feedback">
+            Veillez renseigner le prénom de l'utilisateur
+        </div>
+        <div class="mb-3">
+            <label for="nomCreateInput" class="form-label">Nom de l'utilisateur</label>
+            <input type="text" class="form-control" id="nomCreateInput" aria-describedby="nomCreateInput">
+            <div id="nomCreateInput" class="form-text"></div>
+            <div class="invalid-feedback">
+                Veillez renseigner le nom de l'utilisateur 
+            </div>
         <div class="mb-3">
             <label for="mailCreateInput" class="form-label">mail de l'utilisateur</label>
             <input type="mail" class="form-control" id="mailCreateInput" aria-describedby="mailCreateInput">
