@@ -11,7 +11,8 @@ InputMailCreation.addEventListener("keyup", validateForm);
 InputMdpCreation.addEventListener("keyup", validateForm);
 InputRoleCreation.addEventListener("keyup", validateForm);
 btnCreation.addEventListener('click', createUser);
-
+showAllUser();
+deleteUser();
 
 //fonctionalité
 function createUser(event) {
@@ -43,6 +44,14 @@ function createUser(event) {
     } else {
         btnCreation.disabled = true;
     }
+}
+
+function deleteUser(userId) {
+    users.forEach((user) => {
+        const userPositionArray = users.indexOf(user);
+        user.id === parseInt(userId) && users.splice(userPositionArray, 1);
+    });
+    showAllUser();
 }
 
 function isEmailUnique(email) {
@@ -96,8 +105,10 @@ function showAllUser() {
 
         const deleteButton = document.createElement('button');
         deleteButton.textContent = 'Supprimer';
+        deleteButton.setAttribute('id', user.id);
         deleteButton.classList.add('btn', 'btn-primary', 'me-2');
-        deleteButton.addEventListener('click', function() {
+        deleteButton.addEventListener('click', function(event) {
+            event.preventDefault();
             deleteUser(user.id);
         });
 
@@ -114,7 +125,6 @@ function showAllUser() {
         allUsersContainer.appendChild(newDiv);
     });
 }
-
 
 function editUser(userId) {
     const user = users.find(user => user.id === userId);
