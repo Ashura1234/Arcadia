@@ -2,7 +2,7 @@ import Route from "./Route.js";
 
 //Définir ici vos routes
 export const allRoutes = [
-    new Route("/", "Accueil", "/pages/home.html", []),
+    new Route("/", "Accueil", "/pages/home.php", []),
     new Route("/habitat", "Habitat", "/pages/habitat.html", []),
     new Route("/services", "Services", "/pages/services.html", []),
     new Route("/detailTigre", "La maison du tigre", "/pages/animaux/detailTigre.html", []),
@@ -13,7 +13,7 @@ export const allRoutes = [
     new Route("/reservationBalade", "détails des balades", "/pages/services/balade.html", []),
     new Route("/reserverBalade", "reservation d'une Balade", "/pages/reservations/reserverBalade.html", []),
     new Route ("/ficheReservation", "fiche de reservation", "/pages/reservations/ficheReservation.html", ["client"]),
-    new Route ("/signin", "Connexion", "/pages/auth/signin.html", ["disconnected"], "/js/auth/signin.js"),,
+    new Route ("/signin", "Connexion", "/pages/auth/signin.php", ["disconnected"]),,
     new Route ("/signup", "Inscription", "/pages/auth/signup.html", ["disconnected"], "/js/auth/signup.js"), 
     new Route ("/gestionUser", "gestion des services", "/pages/admin/gestionUser.html", ["admin"], "js/admin.js"),
     new Route("/reserver", "réserver une table", "/pages/reservations/reserver.html", ["client"]),

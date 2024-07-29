@@ -1,3 +1,6 @@
+<?php 
+session_start();
+?>
 
 <div class="hero-scene text-center text-white">
     <div class=" hero-scene-content">
