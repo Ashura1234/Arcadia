@@ -1,20 +1,25 @@
 <?php
 require_once(dirname(__FILE__) . "/../config/database.php");
 
-$req = $dbh->prepare("SELECT * FROM user WHERE email = :email AND password = :password");
-$req->bindParam(":email", $_POST["email"]);
-$req->bindParam(":password", $_POST["password"]);
-$req->execute();
+try {
+    $req = $dbh->prepare("SELECT * FROM user WHERE email = :email");
+    $req->bindParam(":email", $_POST["email"]);
+    $req->execute();
 
-$result = $req->fetch(PDO::FETCH_ASSOC);
-if ($result) {
-    // Login successful
-    session_start();
-    $_SESSION["email"] = $result["email"];
-    header("Location: /"); // Redirect to the home page
-    exit();
-} else {
-    // Invalid email or password
-    header("Location: /signin?error=1"); // Redirect with error parameter
-} 
+    $result = $req->fetch(PDO::FETCH_ASSOC);
+
+    if ($result && password_verify($_POST["password"], $result["password"])) {
+        // Connexion réussie
+        session_start();
+        $_SESSION["email"] = $result["email"];
+        header("Location: /"); // Redirection vers la page d'accueil
+        exit();
+    } else {
+        // Email ou mot de passe incorrect
+        header("Location: /signin?error=1"); // Redirection avec le paramètre d'erreur
+        exit();
+    }
+} catch (PDOException $e) {
+    echo "Erreur de base de données : " . $e->getMessage();
+}
 ?>
