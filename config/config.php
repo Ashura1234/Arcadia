@@ -4,4 +4,6 @@ $config = [
     'DB_NAME' => 'arcadia',
     'DB_USER' => 'root',
     'DB_PASS' => '', // Mettez votre mot de passe MySQL ici
+    'SECRET_KEY' => ',1sxCS$)',
+    'ROLE' => ["client", "employe", "veterinaire"],
 ];

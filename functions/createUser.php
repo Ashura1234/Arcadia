@@ -8,32 +8,42 @@ function sanitizeInput($data) {
 $prenom = sanitizeInput($_POST["prenom"]);
 $nom = sanitizeInput($_POST["nom"]);
 $email = filter_var(sanitizeInput($_POST["email"]), FILTER_VALIDATE_EMAIL);
-$password = md5($_POST["password"]);
-$role = "client"; // Rôle par défaut
+$message = "compte créé avec succes";
 
-if (!$email) {
-    header("Location: /signup?error=Invalid Email");
-    exit();
-}
 
-try {
-    $req = $dbh->prepare("INSERT INTO user (prenom, nom, email, password, role) VALUES (:prenom, :nom, :email, :password, :role)");
-    $hashedPassword = password_hash($_POST["password"], PASSWORD_BCRYPT);
-
-$req = $dbh->prepare("INSERT INTO user (prenom, nom, email, mdp, role) VALUES (:prenom, :nom, :email, :mdp, :role)");
-$req->bindParam(":prenom", $_POST["prenom"]);
-$req->bindParam(":nom", $_POST["nom"]);
-$req->bindParam(":email", $_POST["email"]);
-$req->bindParam(":mdp", $hashedPassword);
-$req->bindParam(":role", $role);
-$role = 'client'; // Valeur par défaut pour le rôle
-$req->execute();
-
+    // Préparez la requête pour vérifier si l'utilisateur existe déjà
+    $req = $dbh->prepare("SELECT * FROM user WHERE email = :email");
+    $req->bindParam(":email", $_POST["email"]);
     $req->execute();
 
-    header("Location: /signin?success=1");
-    exit();
-} catch (PDOException $e) {
-    echo "Erreur : " . $e->getMessage();
+    // Récupérez les résultats de la requête
+    $result = $req->fetch(PDO::FETCH_ASSOC);
+
+    // Si l'utilisateur existe déjà, redirigez vers la page d'inscription avec un message d'erreur
+    if ($result) {
+        header("Location: /signup?error=le compte existe déjà"); // Rediriger avec un message d'erreur
+        exit();
+    }
+
+if (!$result){
+    $passwordTohash = $_POST["password"] . $config["SECRET_KEY"];  // Ajouter un sel au mot de passe
+    $hashedPassword = md5($passwordTohash);  // Hacher le mot de passe
+    $role = $config["ROLE"][0]; // Rôle par défaut
+    try {
+        $req = $dbh->prepare("INSERT INTO user (prenom, nom, email, password, role) VALUES (:prenom, :nom, :email, :password, :role)");
+        $req->bindParam(":prenom", $prenom);
+        $req->bindParam(":nom", $nom);
+        $req->bindParam(":email", $email);
+        $req->bindParam(":password", $hashedPassword);  // Utilisez :password pour lier le mot de passe
+        $req->bindParam(":role", $role);
+        $req->execute();
+    
+        header("Location: /signin?message=$message&type=sucess");
+        exit();
+    } catch (PDOException $e) {
+        echo "Erreur : " . $e->getMessage();
+    }    
 }
+
+
 ?>
